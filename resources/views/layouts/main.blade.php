@@ -107,6 +107,7 @@
 		<script src="../public/js/core/source/AppVendor.js"></script>
 		<script src="../public/js/core/demo/Demo.js"></script>
 		<script src="../public/js/core/demo/DemoDashboard.js"></script>
+		<script src="../public/js/form-submit.js"></script>
 		<!-- END JAVASCRIPT -->
 
         @yield('jscript')

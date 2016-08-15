@@ -18,8 +18,10 @@ class TestController extends Controller
     |
     */
 
-    public function analyzeUrl($name)
+    public function analyzeUrl(Request $request)
     {
+        $name = $request->name;
+
         $url = "https://www.googleapis.com/pagespeedonline/v2/runPagespeed?screenshot=true&strategy=mobile&url=http://".$name;
 
         $curl = curl_init($url);
@@ -32,15 +34,15 @@ class TestController extends Controller
         curl_close($curl);
 
         $data = json_decode($result, true);
+        return $data;
 
         $rg = $data["ruleGroups"];
         $speed = $rg["SPEED"]["score"];
         $usability = $rg["USABILITY"]["score"];
 
-        $screenshot_encoded =  $data['screenshot']['data'];
-        $screenshot_encoded = str_replace("_", "/", $screenshot_encoded);
-        $screenshot_encoded = str_replace("-", "+", $screenshot_encoded);
-        $scr = base64_decode($screenshot_encoded);
+        $scr =  $data['screenshot']['data'];
+        $scr = str_replace("_", "/", $scr);
+        $scr = str_replace("-", "+", $scr);
 
         //dd($scr);
         return view('pages.results', compact('speed', 'usability', 'scr'));

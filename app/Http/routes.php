@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('pages.form');
 });
 
-Route::get('/analyze/{url}', 'TestController@analyzeUrl');
+Route::post('analyze', 'TestController@analyzeUrl');

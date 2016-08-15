@@ -10,15 +10,17 @@
                                                 <div class="row">
                                                     <div class="col-md-3"></div>
                                                     <div class="col-md-4">
-                                                        <form class="form">
+                                                        <form class="form" action="analyze" method="POST">
+                                                            {{ csrf_field() }}
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="regular1">
+                                                                <input type="text" class="form-control" name="name" id="regular1">
                                                                 <label for="regular1">Website URL</label>
                                                             </div>
-                                                        </form>
+                                                            <div><strong id="error" style="color:red"></strong></div>
                                                     </div>
                                                     <div class="col-md-2" style="padding-top: 1em;">
-                                                        <button type="button" class="btn ink-reaction btn-raised btn-primary" style="width: 100%;">ANALYZE</button>
+                                                        <input type="submit" class="btn ink-reaction btn-raised btn-primary" style="width: 100%;" value="ANALYZE" id="submitt">
+                                                        </form>
                                                     </div>
                                                     <div class="col-md-3"></div>
                                                 </div>
@@ -26,7 +28,12 @@
                                                 <div class="row">
                                                     <div class="col-md-2"></div>
                                                     <div class="col-md-3">
-                                                        <img src="{{URL::asset('img/droid2.png')}}" alt="">
+                                                        <div style="position:relative;height:450px">
+                                                            <img src="{{url('img')}}/droid2.png" style="position:absolute">
+                                                            <div style="width:212px;height:320px;background-color:white;position:absolute;left:15px;top:55px">
+                                                                <img src="data:image/jpeg;base64,{{$scr}}" style="width:100%;height:100%">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-5">
 
