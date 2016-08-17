@@ -30,10 +30,24 @@
 			    #example-navbar-collapse {
 			        float: right;
 			    }
-			    #example-navbar-collapse > ul {
-			        border: none;
+			}
+
+			@media screen and (min-width: 768px) and (max-width: 992px) {
+			    #example-navbar-collapse, .navbar-header {
+			    	width: 100%;
+			    }
+
+			    #example-navbar-collapse ul {
+			    	width: 55%;
+			    	margin: 0 25%;‌​
+			    }
+
+			    .navbar-brand {
+			    	width: 50%;
+			    	margin: 0 38%;‌​
 			    }
 			}
+
 			@media screen and (max-device-width: 769px) {
 			    .screen-shot > div{
 				    width:250px;
@@ -46,16 +60,6 @@
 				    margin: 0 auto;
 			    }
 			}
-			.thumbnail {
-    display: block;
-    position: relative;
-}
-.thumbnail h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 		</style>
 		<![endif]-->
