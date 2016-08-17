@@ -18,65 +18,54 @@
 		<link type="text/css" rel="stylesheet" href="{{ URL::asset('css/theme-1/material-design-iconic-font.min.css?1421434286') }}" />
 		<link type="text/css" rel="stylesheet" href="{{ URL::asset('css/theme-1/libs/rickshaw/rickshaw.css?1422792967') }}" />
 		<link type="text/css" rel="stylesheet" href="{{ URL::asset('css/theme-1/libs/morris/morris.core.css?1420463396') }}" />
+		<link type="text/css" rel="stylesheet" href="{{ URL::asset('css/nav-bar.css') }}" />
 		<!-- END STYLESHEETS -->
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<script type="text/javascript" src="../../public/js/libs/utils/html5shiv.js?1403934957"></script>
 		<script type="text/javascript" src="../../public/js/libs/utils/respond.min.js?1403934956"></script>
+		<style type="text/css">
+
+			@media screen and (min-width: 769px) {
+			    #example-navbar-collapse {
+			        float: right;
+			    }
+			}
+
+		</style>
 		<![endif]-->
 	</head>
 	<body class="menubar-hoverable header-fixed menubar-pin">
 
 		<!-- BEGIN HEADER-->
-		<header id="header" >
-			<div class="headerbar">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="header-nav-brand" >
-							<div class="brand-holder">
-								<a href="../../html/dashboards/dashboard.html">
-									<span class="text-lg text-bold text-primary">MOB ANALYZER</span>
-								</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options" style="padding-top: 0.3em; padding-right: 1em;">
+		<nav class = "navbar navbar-default" role = "navigation">
+		<div class = "navbar-header">
+	      <button type = "button" class = "navbar-toggle"
+	         data-toggle = "collapse" data-target = "#example-navbar-collapse">
+	         <span class = "sr-only">Toggle navigation</span>
+	         <span class = "icon-bar"></span>
+	         <span class = "icon-bar"></span>
+	         <span class = "icon-bar"></span>
+	      </button>
 
-						<li class="dropdown">
-							SERVICES
-						</li><!--end .dropdown -->
-						<li class="dropdown">
-							RESULTS
-						</li><!--end .dropdown -->
-                        <li class="dropdown">
-							COMPANY
-						</li><!--end .dropdown -->
-						<li class="dropdown">
-							RESOURCES
-						</li><!--end .dropdown -->
+	      <a class = "navbar-brand" href = "#">MOB ANALYZER</a>
+	   </div>
+	   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
 
-					</ul><!--end .header-nav-options -->
-
-				</div><!--end #header-navbar-collapse -->
-
-			</div>
-		</header>
+	      <ul class = "nav navbar-nav" style="text-align:center">
+	         <li><a href = "#">SERVICES</a></li>
+	         <li><a href = "#">RESULTS</a></li>
+	         <li><a href = "#">COMPANY</a></li>
+	         <li><a href = "#">RESOURCES</a></li>
+	      </ul>
+	   </div>
+	   </nav>
 		<!-- END HEADER-->
 
 			<!-- BEGIN CONTENT-->
-			<div id="content">
-				<section>
-					<div class="section-body">
-						<div class="row">
+
                             @yield('content')
-						</div><!--end .row -->
-					</div><!--end .section-body -->
-				</section>
-			</div><!--end #content-->
+
 			<!-- END CONTENT -->
 
 		<!-- BEGIN JAVASCRIPT -->
@@ -110,6 +99,17 @@
 		<script src="../public/js/form-submit.js"></script>
 		<!-- END JAVASCRIPT -->
 
+		<script type="text/javascript">
+			/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+			function myFunction() {
+			    var x = document.getElementById("myTopnav");
+			    if (x.className === "topnav") {
+			        x.className += " responsive";
+			    } else {
+			        x.className = "topnav";
+			    }
+			}
+		</script>
         @yield('jscript')
 	</body>
 </html>

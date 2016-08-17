@@ -41,13 +41,15 @@
                                                             <div class="col-md-1"></div>
                                                             <div class="col-md-4">
                                                                 <div class="tile-icon" style="background-color: #e0e0e0; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
-                                                                    <p class="text-xxxxl">{{$speed}}</p>
+                                                                    <p class="text-xxxxl">{{$usability}}</p>
                                                                </div>
                                                             </div>
                                                             <div class="col-md-7" style="margin-top: -1em;">
-                                                                <p class="text-xxl">Mobile-friendly</p>
-                                                                <p style="margin-top: -1em;">The Google Usability score for this website is 82/100. Satisfies basic usability test.</p>
-                                                                <p>2 errors found<br>3 rules assed</p>
+                                                                <p class="text-xxl">{{ $friendly[0] }}</p>
+                                                                <p style="margin-top: -1em;">The Google Usability score for this website is {{$usability}}/100. {{ $friendly[1] }}</p>
+
+                                                                <p>{{ $rule['use_rule'] - $rule['use_pass_rule'] }} errors found
+                                                                <br>{{ $rule['use_pass_rule'] }} rules passed</p>
                                                                 <button type="button" class="btn ink-reaction btn-flat btn-primary">Learn More</button>
                                                             </div>
                                                         </div>
@@ -58,11 +60,16 @@
                                                             <div class="col-md-1"></div>
                                                             <div class="col-md-4">
                                                                 <div class="tile-icon" style="background-color: #e0e0e0; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
-                                                                    <p class="text-xxxxl">{{$usability}}</p>
+                                                                    <p class="text-xxxxl">{{$speed}}</p>
                                                                </div>
                                                             </div>
                                                             <div class="col-md-7" style="margin-top: -1em;">
-                                                                <p class="text-xxl">Mobile-friendly</p>
+                                                                <p class="text-xxl">Mobile-Fast</p>
+                                                                <p style="margin-top: -1em;">The Google Speed score for this website is {{$speed}}/100. {{ $friendly[1] }}</p>
+
+                                                                <p>{{ $rule['speed_rule'] - $rule['speed_pass_rule'] }} errors found
+                                                                <br>{{ $rule['speed_pass_rule'] }} rules passed</p>
+                                                                <button type="button" class="btn ink-reaction btn-flat btn-primary">Learn More</button>
                                                             </div>
                                                         </div>
 
