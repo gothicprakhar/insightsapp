@@ -129,7 +129,6 @@ s
         $scr = str_replace("-", "+", $scr);
         //end get use and speed score with image
 
-        //dd($scr);
 
 //        return view('pages.results', compact('speed', 'usability', 'scr', 'friendly', 'rule'));
 

@@ -73,7 +73,7 @@
 		         <span class = "icon-bar"></span>
 		      </button>
 
-		      <a class = "navbar-brand" href = "#">MOB ANALYZER</a>
+		      <a class = "navbar-brand" href = "#" style="color: #0C84E4;">MOB ANALYZER</a>
 		   </div>
 		   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
 

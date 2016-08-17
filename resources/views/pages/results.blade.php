@@ -38,14 +38,15 @@
                                                     <div class="col-md-5 col-sm-7">
 
                                                         <div class="row">
-                                                            <div class="col-md-1"></div>
-                                                            <div class="col-md-4 col-sm-4">
-
+                                                            <div class="col-md-1 hidden-xs"></div>
+                                                            <div class="col-md-4 col-sm-4 col-xs-5" >
+                                                                <center>
                                                                 <div class="tile-icon" style="background-color: #2E9C4D; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
                                                                     <p class="text-xxxxl" style="color: #fff;">{{$usability}}</p>
                                                                </div>
+                                                                    </center>
                                                             </div>
-                                                            <div class="col-md-7 col-sm-8" style="margin-top: -1em;">
+                                                            <div class="col-md-7 col-sm-8 col-xs-7" style="margin-top: -1em;">
                                                                 <p class="text-xxl">{{$usabilitytext}}</p>
                                                                 <p style="margin-top: -1em;">The Google Usability score for this website is {{$usability}}/100. Satisfies basic usability test.</p>
                                                                 <p><img src="{{URL::asset('icons/error.png')}}" width="20px"> {{$usabilityMinus}} error(s) found<br> <img src="{{URL::asset('icons/tick.png')}}" width="20px"> {{$usabilityPlus}} rule(s) passed</p>
@@ -56,14 +57,15 @@
                                                         <br><br>
 
                                                         <div class="row">
-                                                            <div class="col-md-1"></div>
-                                                            <div class="col-md-4 col-sm-4">
-
+                                                            <div class="col-md-1 hidden-xs"></div>
+                                                            <div class="col-md-4 col-sm-4 col-xs-5">
+                                                                <center>
                                                                 <div class="tile-icon" style="background-color: #D15436; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
                                                                     <p class="text-xxxxl" style="color: #fff;">{{$speed}}</p>
                                                                </div>
+                                                                 </center>
                                                             </div>
-                                                            <div class="col-md-7 col-sm-8" style="margin-top: -1em;">
+                                                            <div class="col-md-7 col-sm-8 col-xs-7" style="margin-top: -1em;">
                                                                 <p class="text-xxl">{{$speedtext}}</p>
                                                                 <p style="margin-top: -1em;">The Google speed score for this website is {{$speed}}/100. Optimization required.</p>
                                                                 <p> <img src="{{URL::asset('icons/error.png')}}" width="20px"> {{$speedMinus}} error(s) found<br> <img src="{{URL::asset('icons/tick.png')}}" width="20px"> {{$speedPlus}} rule(s) passed</p>
