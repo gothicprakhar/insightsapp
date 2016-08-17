@@ -19,8 +19,9 @@ class TestController extends Controller
 
     public function analyzeUrl(Request $request)
     {
-        $name = $request->name;
-        $key = 'AIzaSyCmsKqE4POskVDJDMTYNGK2W0_UhK3ASbI';
+        /*$name = $request->name;
+        $key = 'AIzaSyCmsKqE4POskVDJDMTYNGK2W0_UhK3ASbI';*/
+
 
         //$url = "https://www.googleapis.com/pagespeedonline/v2/runPagespeed?screenshot=true&strategy=mobile&url=http://".$name;
 
@@ -32,12 +33,12 @@ class TestController extends Controller
         $result = curl_exec($curl);
 
         curl_close($curl);
-
+s
         $data = json_decode($result, true);*/
 
 
         //start check if mobile friendly
-        $client = new Client("https://www.googleapis.com/pagespeedonline/v3beta1/mobileReady?url=http://".$name."&screenshot=true&snapshots=false&fields=id%2CruleGroups&strategy=mobile&key=".$key);
+        /*$client = new Client("https://www.googleapis.com/pagespeedonline/v3beta1/mobileReady?url=http://".$name."&screenshot=true&snapshots=false&fields=id%2CruleGroups&strategy=mobile&key=".$key);
         $request = $client->get();
         $result = $request->send();
         $data = json_decode($result->getBody(), true);
@@ -49,11 +50,11 @@ class TestController extends Controller
         {
             $friendly[0] = 'Not Mobile-Friendly';
             $friendly[1] = 'Please address mobile usability issues.';
-        }
+        }*/
         //end check if mobile friendly
 
         //start fetch domain data
-        $client = new Client("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?screenshot=true&strategy=mobile&url=http://".$name);
+        /*$client = new Client("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?screenshot=true&strategy=mobile&url=http://".$name);
         $request = $client->get();
         $result = $request->send();
         $data = json_decode($result->getBody(), true);
@@ -78,21 +79,60 @@ class TestController extends Controller
                                     $rule['use_rule']++;
                                     break;
             }
-        }
+        }*/
         //end find passed and total rules
 
         //start get use and speed score with image
+
+        $name = $request->url;
+        $client = new Client("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?screenshot=true&strategy=mobile&url=http://".$name);
+        $request = $client->get();
+        $result = $request->send();
+        $data = json_decode($result->getBody(), true);
+
+        //Over all speed and score
         $rg = $data["ruleGroups"];
         $speed = $rg["SPEED"]["score"];
         $usability = $rg["USABILITY"]["score"];
 
+        $speedtext = "Not Mobile-Fast";
+        if($speed >= 60) $speedtext = "Mobile-Fast";
+
+        $usabilitytext = "Mobile-Friendly";
+        if($usability < 70) $usabilitytext = "Not Mobile-Friendly";
+
+
+        //Rules Passed and Failed
+        $ruleResults = $data["formattedResults"]["ruleResults"];
+        $speedPlus = 0;
+        $speedTotal = 0;
+        $usabilityPlus = 0;
+        $usabilityTotal = 0;
+
+        foreach($ruleResults as $rule) {
+            $group = implode($rule["groups"]);
+            if($group == "SPEED") {
+                if($rule["ruleImpact"] == 0.0) $speedPlus++;
+                $speedTotal++;
+            }
+            else {
+                if($rule["ruleImpact"] == 0.0) $usabilityPlus++;
+                $usabilityTotal++;
+            }
+        }
+        $usabilityMinus = $usabilityTotal - $usabilityPlus;
+        $speedMinus = $speedTotal - $speedPlus;
+
+        //Screenshot
         $scr =  $data['screenshot']['data'];
         $scr = str_replace("_", "/", $scr);
         $scr = str_replace("-", "+", $scr);
         //end get use and speed score with image
 
         //dd($scr);
-        return view('pages.results', compact('speed', 'usability', 'scr', 'friendly', 'rule'));
 
+//        return view('pages.results', compact('speed', 'usability', 'scr', 'friendly', 'rule'));
+
+        return view('pages.results', compact('speed', 'usability', 'speedtext', 'usabilitytext', 'usabilityMinus', 'usabilityPlus', 'speedMinus', 'speedPlus','scr'));
     }
 }

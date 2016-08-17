@@ -10,10 +10,10 @@
                                                 <div class="row">
                                                     <div class="col-md-3"></div>
                                                     <div class="col-md-4">
-                                                        <form class="form" action="analyze" method="POST">
-                                                            {{ csrf_field() }}
+                                                        <form class="form" action="analyze" method="GET">
+
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="name" id="regular1">
+                                                                <input type="text" class="form-control" name="url" id="regular1" placeholder="www.example.com">
                                                                 <label for="regular1">Website URL</label>
                                                             </div>
                                                             <div><strong id="error" style="color:red"></strong></div>
@@ -27,29 +27,28 @@
                                                 <br><br>
                                                 <div class="row">
                                                     <div class="col-md-2"></div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-3 col-sm-5 screen-shot" style="align :center">
                                                         <div style="position:relative;height:450px">
-                                                            <img src="{{url('img')}}/droid2.png" style="position:absolute">
+                                                            <img class=".img-responsive" src="{{url('img')}}/droid2.png" style="position:absolute">
                                                             <div style="width:212px;height:320px;background-color:white;position:absolute;left:15px;top:55px">
-                                                                <img src="data:image/jpeg;base64,{{$scr}}" style="width:100%;height:100%">
+                                                                <img class=".img-responsive" src="data:image/jpeg;base64,{{$scr}}" style="width:100%;height:100%">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-5 col-sm-7">
 
                                                         <div class="row">
                                                             <div class="col-md-1"></div>
-                                                            <div class="col-md-4">
-                                                                <div class="tile-icon" style="background-color: #e0e0e0; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
-                                                                    <p class="text-xxxxl">{{$usability}}</p>
+                                                            <div class="col-md-4 col-sm-4">
+
+                                                                <div class="tile-icon" style="background-color: #2E9C4D; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
+                                                                    <p class="text-xxxxl" style="color: #fff;">{{$usability}}</p>
                                                                </div>
                                                             </div>
-                                                            <div class="col-md-7" style="margin-top: -1em;">
-                                                                <p class="text-xxl">{{ $friendly[0] }}</p>
-                                                                <p style="margin-top: -1em;">The Google Usability score for this website is {{$usability}}/100. {{ $friendly[1] }}</p>
-
-                                                                <p>{{ $rule['use_rule'] - $rule['use_pass_rule'] }} errors found
-                                                                <br>{{ $rule['use_pass_rule'] }} rules passed</p>
+                                                            <div class="col-md-7 col-sm-8" style="margin-top: -1em;">
+                                                                <p class="text-xxl">{{$usabilitytext}}</p>
+                                                                <p style="margin-top: -1em;">The Google Usability score for this website is {{$usability}}/100. Satisfies basic usability test.</p>
+                                                                <p><img src="{{URL::asset('icons/error.png')}}" width="20px"> {{$usabilityMinus}} error(s) found<br> <img src="{{URL::asset('icons/tick.png')}}" width="20px"> {{$usabilityPlus}} rule(s) passed</p>
                                                                 <button type="button" class="btn ink-reaction btn-flat btn-primary">Learn More</button>
                                                             </div>
                                                         </div>
@@ -58,17 +57,16 @@
 
                                                         <div class="row">
                                                             <div class="col-md-1"></div>
-                                                            <div class="col-md-4">
-                                                                <div class="tile-icon" style="background-color: #e0e0e0; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
-                                                                    <p class="text-xxxxl">{{$speed}}</p>
+                                                            <div class="col-md-4 col-sm-4">
+
+                                                                <div class="tile-icon" style="background-color: #D15436; width: 10em; height: 10em; border-radius: 100px; padding-top: 0.3em; text-align: center;">
+                                                                    <p class="text-xxxxl" style="color: #fff;">{{$speed}}</p>
                                                                </div>
                                                             </div>
-                                                            <div class="col-md-7" style="margin-top: -1em;">
-                                                                <p class="text-xxl">Mobile-Fast</p>
-                                                                <p style="margin-top: -1em;">The Google Speed score for this website is {{$speed}}/100. {{ $friendly[1] }}</p>
-
-                                                                <p>{{ $rule['speed_rule'] - $rule['speed_pass_rule'] }} errors found
-                                                                <br>{{ $rule['speed_pass_rule'] }} rules passed</p>
+                                                            <div class="col-md-7 col-sm-8" style="margin-top: -1em;">
+                                                                <p class="text-xxl">{{$speedtext}}</p>
+                                                                <p style="margin-top: -1em;">The Google speed score for this website is {{$speed}}/100. Optimization required.</p>
+                                                                <p> <img src="{{URL::asset('icons/error.png')}}" width="20px"> {{$speedMinus}} error(s) found<br> <img src="{{URL::asset('icons/tick.png')}}" width="20px"> {{$speedPlus}} rule(s) passed</p>
                                                                 <button type="button" class="btn ink-reaction btn-flat btn-primary">Learn More</button>
                                                             </div>
                                                         </div>

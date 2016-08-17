@@ -7,35 +7,29 @@
 	   <div class="row">
 		<div class="col-md-12">
 		    <div class="card-body">
-                <div class="row" style="margin-top: 15vh;">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <p class="text-xxl">How well does my website work on mobile?</p>
-                    </div>
-                    <div class="col-md-3"></div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-3"></div>
-                        <div class="col-md-4">
-                            <form class="form" action="analyze" method="POST">
-                                {{ csrf_field() }}
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="name" id="regular1">
-                                    <label for="regular1">Website URL</label>
-                                </div>
-                                <div><strong id="error" style="color:red"></strong></div>
-                        </div>
-                        <div class="col-md-2" style="padding-top: 1em;">
-                            <input type="submit" class="btn ink-reaction btn-raised btn-primary" style="width: 100%;" value="ANALYZE" id="submitt">
-                        </form>
-                    </div>
 
+                                                <div class="row" style="margin-top: 15vh;">
+                                                    <div class="col-md-3"></div>
+                                                    <div class="col-md-6">
+                                                        <p class="text-xxl">How well does my website work on mobile?</p>
+                                                    </div>
+                                                    <div class="col-md-3"></div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-3"></div>
+                                                    <div class="col-md-4">
+                                                        <form class="form" action="analyze" method="GET">
 
-
-
-
-
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" name="url" id="regular1" placeholder="www.example.com">
+                                                                <label for="regular1">Website URL</label>
+                                                            </div>
+                                                            <div><strong id="error" style="color:red"></strong></div>
+                                                    </div>
+                                                    <div class="col-md-2" style="padding-top: 1em;">
+                                                        <input type="submit" class="btn ink-reaction btn-raised btn-primary" style="width: 100%;" value="ANALYZE" id="submitt">
+                                                        </form>
 
                                                     </div>
                                                     <div class="col-md-3"></div>

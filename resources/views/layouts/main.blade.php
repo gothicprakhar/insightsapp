@@ -26,11 +26,36 @@
 		<script type="text/javascript" src="../../public/js/libs/utils/respond.min.js?1403934956"></script>
 		<style type="text/css">
 
-			@media screen and (min-width: 769px) {
+			@media screen and (min-width: 768px) {
 			    #example-navbar-collapse {
 			        float: right;
 			    }
+			    #example-navbar-collapse > ul {
+			        border: none;
+			    }
 			}
+			@media screen and (max-device-width: 769px) {
+			    .screen-shot > div{
+				    width:250px;
+				    margin: 0 auto;
+			    }
+			}
+			@media screen and (max-width: 769px) {
+			    .screen-shot > div{
+				    width:250px;
+				    margin: 0 auto;
+			    }
+			}
+			.thumbnail {
+    display: block;
+    position: relative;
+}
+.thumbnail h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 		</style>
 		<![endif]-->
@@ -39,26 +64,26 @@
 
 		<!-- BEGIN HEADER-->
 		<nav class = "navbar navbar-default" role = "navigation">
-		<div class = "navbar-header">
-	      <button type = "button" class = "navbar-toggle"
-	         data-toggle = "collapse" data-target = "#example-navbar-collapse">
-	         <span class = "sr-only">Toggle navigation</span>
-	         <span class = "icon-bar"></span>
-	         <span class = "icon-bar"></span>
-	         <span class = "icon-bar"></span>
-	      </button>
+			<div class = "navbar-header">
+		      <button type = "button" class = "navbar-toggle"
+		         data-toggle = "collapse" data-target = "#example-navbar-collapse">
+		         <span class = "sr-only">Toggle navigation</span>
+		         <span class = "icon-bar"></span>
+		         <span class = "icon-bar"></span>
+		         <span class = "icon-bar"></span>
+		      </button>
 
-	      <a class = "navbar-brand" href = "#">MOB ANALYZER</a>
-	   </div>
-	   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+		      <a class = "navbar-brand" href = "#">MOB ANALYZER</a>
+		   </div>
+		   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
 
-	      <ul class = "nav navbar-nav" style="text-align:center">
-	         <li><a href = "#">SERVICES</a></li>
-	         <li><a href = "#">RESULTS</a></li>
-	         <li><a href = "#">COMPANY</a></li>
-	         <li><a href = "#">RESOURCES</a></li>
-	      </ul>
-	   </div>
+		      <ul class = "nav navbar-nav" style="text-align:center">
+		         <li><a href = "#">SERVICES</a></li>
+		         <li><a href = "#">RESULTS</a></li>
+		         <li><a href = "#">COMPANY</a></li>
+		         <li><a href = "#">RESOURCES</a></li>
+		      </ul>
+		   </div>
 	   </nav>
 		<!-- END HEADER-->
 
