@@ -96,10 +96,10 @@ s
         $usability = $rg["USABILITY"]["score"];
 
         $speedtext = "Not Mobile-Fast";
-        if($speed >= 60) $speedtext = "Mobile-Fast";
+        if($speed >= 75) $speedtext = "Mobile-Fast";
 
         $usabilitytext = "Mobile-Friendly";
-        if($usability < 70) $usabilitytext = "Not Mobile-Friendly";
+        if($usability < 75) $usabilitytext = "Not Mobile-Friendly";
 
 
         //Rules Passed and Failed
