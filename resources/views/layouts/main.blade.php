@@ -39,7 +39,7 @@
 
 			    #example-navbar-collapse ul {
 			    	width: 55%;
-			    	margin: 0 25%;‌​
+			    	margin: 0 28%;‌​
 			    }
 
 			    .navbar-brand {
