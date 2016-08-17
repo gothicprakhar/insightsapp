@@ -19,10 +19,10 @@
                                                 <div class="row">
                                                     <div class="col-md-3"></div>
                                                     <div class="col-md-4">
-                                                        <form class="form" action="analyze" method="POST">
-                                                            {{ csrf_field() }}
+                                                        <form class="form" action="analyze" method="GET">
+
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="name" id="regular1">
+                                                                <input type="text" class="form-control" name="url" id="regular1" placeholder="www.example.com">
                                                                 <label for="regular1">Website URL</label>
                                                             </div>
                                                             <div><strong id="error" style="color:red"></strong></div>
