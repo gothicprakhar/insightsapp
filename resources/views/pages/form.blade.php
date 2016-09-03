@@ -3,7 +3,7 @@
 
 <!-- BEGIN SITE ACTIVITY -->
 <div class="col-md-12">
-    <div class="card " style="min-height: 96vh; margin-top: 2vh;">
+    <div class="card bgm-blue" style="min-height: 96vh; margin-top: 2vh;">
 	   <div class="row">
 		<div class="col-md-12">
 		    <div class="card-body">

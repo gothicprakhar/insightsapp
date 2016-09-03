@@ -2,7 +2,7 @@
 @section('content')
 							<!-- BEGIN SITE ACTIVITY -->
 							<div class="col-md-12">
-								<div class="card " style="min-height: 96vh; margin-top: 2vh;">
+								<div class="card " style="min-height: 85vh; margin-top: 2vh;">
 									<div class="row">
 										<div class="col-md-12">
 											<div class="card-body">
@@ -28,10 +28,10 @@
                                                 <div class="row">
                                                     <div class="col-md-2"></div>
                                                     <div class="col-md-3 col-sm-5 screen-shot" style="align :center">
-                                                        <div style="position:relative;height:450px">
-                                                            <img class="img-responsive" src="{{url('img')}}/droid2.png" style="position:absolute">
+                                                        <div style="position:relative;height:34em">
+                                                            <img class="img-responsive" src="{{url('img')}}/droid2.png" style="position:absolute; width: 84%; height: 100%;">
                                                             <div style="width:212px;height:320px;background-color:white;position:absolute;left:15px;top:55px">
-                                                                <img class="img-responsive" src="data:image/jpeg;base64,{{$scr}}" style="width:100%;height:100%">
+                                                                <img class="img-responsive" src="data:image/jpeg;base64,{{$scr}}" style="width:100%;height:107%">
                                                             </div>
                                                         </div>
                                                     </div>
