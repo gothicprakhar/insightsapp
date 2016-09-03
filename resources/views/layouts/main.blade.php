@@ -66,7 +66,7 @@
 	</head>
 	<body class="menubar-hoverable header-fixed menubar-pin">
 
-		<!-- BEGIN HEADER-->
+		<!-- BEGIN HEADER
 		<nav class = "navbar navbar-default" role = "navigation">
 			<div class = "navbar-header">
 		      <button type = "button" class = "navbar-toggle"
